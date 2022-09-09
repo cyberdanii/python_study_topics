@@ -9,7 +9,7 @@ class coche:
         self.aceleracion = aceleracion
         self.velociodad = 0
 
-    # metodod de instancia
+    # metodo de instancia
     def acelera(self):
         self.velocidad = self.velocidad + self.aceleracion
 

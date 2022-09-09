@@ -1,4 +1,3 @@
-from turtle import back
 from colorama import init, Style, Fore, Back
 
 init()
