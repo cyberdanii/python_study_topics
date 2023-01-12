@@ -1,6 +1,22 @@
-mews_sites:
+news_sites:
+  # Sitios webs
   eluniversal:
-    url: htttp://www.eluniversal.com.mx
+    url: 'https://www.eluniversal.com.mx'
+    # queries para la extraccion de datos
+    queries:
+      homepage_article_links: '.field-content a'
+      article_title: '.field-name-body'
+      article_body: '.pane-content h1'
   elpais:
-    url: https//elpais.com
+    url: 'https://elpais.com'
+    queries:
+      homepage_article_links: '' 
+      article_title: '.articulo-cuerpo'
+      article_body: '.articulo-titulo'
+  washingtonpost:
+    url: https://www.washingtonpost.com
+    queries:
+      homepage_article_links: '.headline a'
+      article_body: '.topper-headline h1'
+      article_title: 'article.paywall'
     

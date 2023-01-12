@@ -35,6 +35,7 @@ print("----")
 thislist.remove("orange")
 print(thislist)
 print("----")
+
 #tambien se puede utilizar la siguiente sintaxis para eliminar cierto elemento de la lista o toda la lista:
 # del thislist[0] - esto elimina el elemento en la posicion 0 de la lista
 # del thislist - esto elimina toda la lista

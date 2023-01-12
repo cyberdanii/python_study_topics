@@ -4,7 +4,8 @@
 	</head>
 	<body>
 {% include "menu.html" %}
-		<h1 style = "font-family: 'Arial'; "><b>Rick and Morty - Characters</b></h1>
+		<h1 style = "font-family: 'Lucida Console'; "><b>Rick and Morty - Characters</b></h1>
+		<h2 style = "font-family: 'Lucida Console'; "><b>count: {{ contenido.results | length }}</b></h2>
 		<div id = "cuerpo">
 		<div class="disposicion" >
 		
@@ -12,10 +13,10 @@
 			<div class="card" >
 		  	<img src={{personaje.image}} alt="personaje-imagen" >
 		  	<div class="container">
-		  	<h4><b>{{ personaje.name }}</b></h4>
+		  	<h4 style = "font-family: 'Lucida Console'; "><b>{{ personaje.name }}</b></h4>
 			<p>Status: {{ personaje.status }}</p>
-			<p>gender: {{ personaje.gender }}</p>
-		  	<p>planet: {{ personaje.location.name }}</p>
+			<p>Gender: {{ personaje.gender }}</p>
+		  	<p>Planet: {{ personaje.location.name }}</p>
   			</div>
 			</div>
 		{% endfor %}
@@ -25,10 +26,10 @@
 	</body>
 	<style>
 #cuerpo{
-	background-color: darkred;
+	background-color: rgb(0, 0, 0);
 }
 p {
-	font-family: Helvetica, sans-serif;
+	font-family: "Lucida Console";
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -40,11 +41,11 @@ border-radius: 10px 10px;
 .disposicion {
 	display: grid; 
 	/* numero y tamaño de columnas del grid */
-	grid-template-columns: 320px 320px 320px 320px; 
+	grid-template-columns: 25% 25% 25% 25%; 
 }
 .card {
-	background: black;
-	color: white;
+	background: rgb(25, 13, 0);
+	color: rgb(255, 183, 0);
 }
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);

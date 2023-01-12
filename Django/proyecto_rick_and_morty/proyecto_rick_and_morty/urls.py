@@ -1,4 +1,4 @@
-"""proyecto1_estudio URL Configuration
+"""proyecto_rick_and_morty URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from proyecto1_estudio.views import index, characters
+from proyecto_rick_and_morty.views import index, characters, planets, chapters
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
-    path('allcharacters/', characters, name='personajes'), # 'name' permite que HTML enlace la vista
+    path('characters/', characters, name='characters'), # 'name' permite que HTML enlace la vista
+    path('planets/', planets, name='planets'), 
+    path('chapters/', chapters, name='chapters'), 
 ]
