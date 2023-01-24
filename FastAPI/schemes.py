@@ -1,5 +1,8 @@
 from pydantic import BaseModel, Field
 from typing import Optional
+from  fastapi  import HTTPException, Request
+from fastapi.security import HTTPBearer
+from jwt_manager import validate_token
 
 class Movies(BaseModel):
     id: Optional[int] = None
@@ -21,3 +24,13 @@ class Movies(BaseModel):
             }
         }
 
+class User(BaseModel):
+    email: str
+    password: str
+
+class JWTBearer(HTTPBearer):
+	async def __call__(self, request: Request):
+		auth = await super().__call__(request) #  se llama a la funcion de la clase heredada
+		data = validate_token(auth.credentials) # se valida el token
+		if data['email'] != "admin@email.com":
+			raise HTTPException(status_code=403, detail="Credenciales son invalidas")

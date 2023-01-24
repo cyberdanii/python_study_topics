@@ -1,7 +1,8 @@
-from fastapi import FastAPI, Body, Path, Query
+from fastapi import FastAPI, Body, Path, Query, Depends
 from fastapi.responses import HTMLResponse, JSONResponse
-from schemes import Movies
+from schemes import Movies, User, JWTBearer
 from typing import List
+from jwt_manager import create_token
 
 app = FastAPI()  # instanciacion
 app.title = "Mi primera aplicacion con FastAPI"
@@ -27,6 +28,14 @@ movies = [
 ]
 
 
+
+@app.post('/login', tags=['auth'])
+def login(user: User):
+    if user.email == 'admin@email.com' and user.password == 'admin':
+        token: str = create_token(user.dict())
+        return JSONResponse(content = token, status_code = 200)
+
+
 @app.get('/', tags=['home'])  # ruta de la API
 def message():
     return HTMLResponse('<h1>Hello World</h1>')  # mensaje
@@ -34,7 +43,8 @@ def message():
 
 @app.get('/movies', 
         tags=['movies'],
-        response_model= List[Movies]) # indica que retorna una lista de objetos (json)
+        response_model= List[Movies],  # indica que retorna una lista de objetos (json)
+        dependencies=[Depends(JWTBearer())]) # indica que solo se peude acceder a la vista una vez autenticado
 def get_movies():
     # return movies
     return JSONResponse(content=movies, status_code=200)
