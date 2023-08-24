@@ -59,9 +59,9 @@ po0 = productos(12,"camara",12.00)
 po1 = productos(13,"play station",100.00)
 po2 = productos(14,"celular",62.00)
 
-print(po0.codigo,po0.nombre,po0.valor)
-print(po1.codigo,po1.nombre,po1.valor)
-print(po2.codigo,po2.nombre,po2.valor)
+print(po0.codigo, po0.nombre, po0.valor)
+print(po1.codigo, po1.nombre, po1.valor)
+print(po2.codigo, po2.nombre, po2.valor)
 
 '''
 NOTA: en el caso de las funciones de acceso se colocan sin parentesis en cualquier uso
