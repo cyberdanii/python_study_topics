@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  fast-api-app:
+    build: .
+    container_name: fapi-app-container
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./:/usr/src/application:rw
+    command: ["uvicorn", "app.main:app", "--host". "0.0.0.0", "--port", "5000", "--reload"]
+
+  cluster:
+    build: .
+    container_name: cluster_one
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./:/usr/src/application:rw
