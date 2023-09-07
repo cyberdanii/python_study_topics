@@ -1,7 +1,7 @@
 from tkinter import *
 
 ventana = Tk()
-ventana.iconbitmap("alien.ico") # estable el icono
+ventana.iconbitmap("interfacez/alien.ico") # estable el icono
 ventana.title("Nueva Ventana") 
 ventana.resizable(True,True) # establece si la ventana sera redimencinable o no
 ventana.geometry("600x600")
