@@ -1,1 +1,1 @@
-# Python Study Repository ✔
+# Python Study Repository ✅
